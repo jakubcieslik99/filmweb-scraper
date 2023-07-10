@@ -1,10 +1,20 @@
+import * as csvWriter from 'csv-writer';
 import { WebScraper } from '../classes/WebScraper';
-import { Movie } from 'src/interfaces/Movie';
+import { Movie } from '../interfaces/Movie';
+
+jest.mock('csv-writer');
 
 describe('WebScraper', () => {
   let webScraper: WebScraper;
+  let csvWriteRecordsMock: jest.Mock;
 
-  beforeEach(() => (webScraper = new WebScraper()));
+  beforeEach(() => {
+    webScraper = new WebScraper();
+    csvWriteRecordsMock = jest.fn();
+    (csvWriter.createObjectCsvWriter as jest.Mock).mockReturnValue({
+      writeRecords: csvWriteRecordsMock,
+    });
+  });
   afterEach(() => jest.resetAllMocks());
 
   describe('deduplicateMovies', () => {
@@ -55,6 +65,28 @@ describe('WebScraper', () => {
         { title: 'Movie 1', service: 'Service 1', rating: 8.5 },
         { title: 'Movie 2', service: 'Service 2', rating: 7.9 },
       ]);
+    });
+  });
+
+  describe('saveMoviesToCsv', () => {
+    it('should save movies to CSV file', async () => {
+      const movies: Movie[] = [
+        { title: 'Movie 1', service: 'Service 1', rating: 8.5 },
+        { title: 'Movie 2', service: 'Service 2', rating: 7.2 },
+      ];
+      const filename = 'movies.csv';
+
+      await webScraper.saveMoviesToCsv(movies, filename);
+
+      expect(csvWriter.createObjectCsvWriter).toHaveBeenCalledWith({
+        path: filename,
+        header: [
+          { id: 'title', title: 'Title' },
+          { id: 'service', title: 'VOD service name' },
+          { id: 'rating', title: 'rating' },
+        ],
+      });
+      expect(csvWriteRecordsMock).toHaveBeenCalledWith(movies);
     });
   });
 });
