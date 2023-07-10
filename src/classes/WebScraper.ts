@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import * as csvWriter from 'csv-writer';
 import { VODServices } from './VODServices';
 import { VODService } from 'src/interfaces/VODService';
 import { Movie } from 'src/interfaces/Movie';
@@ -66,5 +67,20 @@ export class WebScraper {
       default:
         return movies;
     }
+  };
+
+  public saveMoviesToCsv = async (movies: Movie[], filename: string): Promise<void> => {
+    const csv = csvWriter.createObjectCsvWriter({
+      path: filename,
+      header: [
+        { id: 'title', title: 'Title' },
+        { id: 'service', title: 'VOD service name' },
+        { id: 'rating', title: 'rating' },
+      ],
+    });
+
+    await csv.writeRecords(movies);
+
+    console.log(`[LOG] Movies saved to ${filename}.`);
   };
 }
