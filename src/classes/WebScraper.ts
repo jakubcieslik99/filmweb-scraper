@@ -43,4 +43,17 @@ export class WebScraper {
     console.log(`[LOG] Scraped ${movies.length} movies in total from ${year} year.`);
     return movies;
   };
+
+  public deduplicateMovies = (movies: Movie[]): Movie[] => {
+    const deduplicatedMovies: { [title: string]: Movie } = {};
+
+    for (const movie of movies) {
+      if (!deduplicatedMovies[movie.title] || deduplicatedMovies[movie.title].rating < movie.rating) {
+        deduplicatedMovies[movie.title] = movie;
+      }
+    }
+
+    console.log(`[LOG] Deduplicated ${movies.length} movies to ${Object.keys(deduplicatedMovies).length}.`);
+    return Object.values(deduplicatedMovies);
+  };
 }
