@@ -56,4 +56,15 @@ export class WebScraper {
     console.log(`[LOG] Deduplicated ${movies.length} movies to ${Object.keys(deduplicatedMovies).length}.`);
     return Object.values(deduplicatedMovies);
   };
+
+  public sortMoviesByRating = (movies: Movie[], sorting?: 'ascending' | 'descending'): Movie[] => {
+    switch (sorting) {
+      case 'ascending':
+        return movies.sort((a, b) => a.rating - b.rating);
+      case 'descending':
+        return movies.sort((a, b) => b.rating - a.rating);
+      default:
+        return movies;
+    }
+  };
 }
