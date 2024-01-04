@@ -1,6 +1,6 @@
 {
   "name": "filmweb-scraper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Filmweb Scraper",
   "main": "index.js",
   "scripts": {
@@ -13,13 +13,13 @@
   "author": "Jakub Cieślik",
   "license": "UNLICENSED",
   "dependencies": {
-    "axios": "^1.6.2",
+    "axios": "^1.6.4",
     "cheerio": "^1.0.0-rc.12",
     "csv-writer": "^1.6.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
-    "@types/node": "^20.10.4",
+    "@types/node": "^20.10.6",
     "jest": "^29.7.0",
     "nodemon": "^3.0.2",
     "ts-jest": "^29.1.1",
