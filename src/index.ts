@@ -1,4 +1,4 @@
-import { WebScraper } from './classes/WebScraper';
+import { WebScraper } from './classes/WebScraper.js';
 
 (async () => {
   const webScraper = new WebScraper();

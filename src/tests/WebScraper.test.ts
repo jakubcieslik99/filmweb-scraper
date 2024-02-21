@@ -1,6 +1,6 @@
 import * as csvWriter from 'csv-writer';
-import { WebScraper } from '../classes/WebScraper';
-import { Movie } from '../interfaces/Movie';
+import { WebScraper } from '../classes/WebScraper.js';
+import { Movie } from '../interfaces/Movie.js';
 
 jest.mock('csv-writer');
 

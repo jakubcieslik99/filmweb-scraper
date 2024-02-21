@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 import * as csvWriter from 'csv-writer';
-import { VODServices } from './VODServices';
-import { VODService } from 'src/interfaces/VODService';
-import { Movie } from 'src/interfaces/Movie';
+import { VODServices } from './VODServices.js';
+import { VODService } from 'src/interfaces/VODService.js';
+import { Movie } from 'src/interfaces/Movie.js';
 
 export class WebScraper {
   constructor(private vodServices: VODService[] = VODServices.vodServices) {}

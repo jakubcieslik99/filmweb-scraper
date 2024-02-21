@@ -1,4 +1,4 @@
-import { VODService } from '../interfaces/VODService';
+import { VODService } from '../interfaces/VODService.js';
 
 export class VODServices {
   public static readonly vodServices: VODService[] = [
