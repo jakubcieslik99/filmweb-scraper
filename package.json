@@ -1,6 +1,6 @@
 {
   "name": "filmweb-scraper",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Filmweb Scraper",
   "type": "module",
   "main": "index.ts",
@@ -8,24 +8,26 @@
     "prod": "node dist/index.js",
     "start": "tsx src/index.ts",
     "dev": "nodemon --exec tsx src/index.ts",
-    "test": "jest --watch",
-    "build": "tsc -p tsconfig.build.json"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest --watchAll",
+    "build": "tsc",
+    "update:all": "corepack up && pnpm update"
   },
   "author": "Jakub Cieślik",
   "license": "UNLICENSED",
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
   "dependencies": {
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "cheerio": "1.0.0-rc.12",
     "csv-writer": "^1.6.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.16.3",
     "jest": "^29.7.0",
-    "nodemon": "^3.1.3",
-    "ts-jest": "^29.1.4",
-    "tsx": "^4.15.2",
-    "typescript": "^5.4.5"
-  },
-  "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771"
+    "nodemon": "^3.1.4",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
 }

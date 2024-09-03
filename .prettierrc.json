@@ -3,7 +3,8 @@
   "singleQuote": true,
   "arrowParens": "avoid",
   "tabWidth": 2,
-  "printWidth": 120,
+  "printWidth": 125,
   "proseWrap": "always",
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "endOfLine": "lf"
 }

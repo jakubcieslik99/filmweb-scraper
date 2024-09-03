@@ -1,8 +1,12 @@
-import * as csvWriter from 'csv-writer';
-import { WebScraper } from '../classes/WebScraper.js';
-import { Movie } from '../interfaces/Movie.js';
+import { jest, describe, beforeEach, afterEach, it, expect } from '@jest/globals';
+import { WebScraper } from '../src/classes/WebScraper.js';
+import { Movie } from '../src/interfaces/Movie.js';
 
-jest.mock('csv-writer');
+jest.unstable_mockModule('csv-writer', () => ({
+  createObjectCsvWriter: jest.fn(),
+  setFailed: jest.fn(),
+}));
+const csvWriter = await import('csv-writer');
 
 describe('WebScraper', () => {
   let webScraper: WebScraper;
@@ -15,7 +19,7 @@ describe('WebScraper', () => {
       writeRecords: csvWriteRecordsMock,
     });
   });
-  afterEach(() => jest.resetAllMocks());
+  afterEach(async () => jest.resetAllMocks());
 
   describe('deduplicateMovies', () => {
     it('should deduplicate movies based on title and keep the one with the highest rating', () => {

@@ -27,25 +27,25 @@ platforms (Netflix, Disney+, HBO Max, Canal+).
 
 ```bash
   cd filmweb-scraper
-  npm install
+  pnpm install
 ```
 
 - Run scraper in development mode
 
 ```bash
-  npm run dev
+  pnpm run dev
 ```
 
 - Scrape data and save to .csv file in development mode
 
 ```bash
-  npm run start
+  pnpm run start
 ```
 
 - Run unit tests
 
 ```bash
-  npm run test
+  pnpm run test
 ```
 
 ## Run scraper in transpiled mode
@@ -55,14 +55,14 @@ platforms (Netflix, Disney+, HBO Max, Canal+).
 - Transpile
 
 ```bash
-  npm run build
+  pnpm run build
 ```
 
 - Scrape data and save to .csv file in transpiled mode
 
 ```bash
-  npm install --omit=dev
-  npm run prod
+  pnpm install --prod
+  pnpm run prod
 ```
 
 ## Feedback
