@@ -1,6 +1,6 @@
 {
   "name": "filmweb-scraper",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Filmweb Scraper",
   "type": "module",
   "main": "index.ts",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.15.17",
     "jest": "^29.7.0",
     "nodemon": "^3.1.10",
     "ts-jest": "^29.3.2",
