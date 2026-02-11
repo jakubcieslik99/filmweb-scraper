@@ -1,6 +1,6 @@
 {
   "name": "filmweb-scraper",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Filmweb Scraper",
   "type": "module",
   "main": "index.ts",
@@ -14,20 +14,20 @@
   },
   "author": "Jakub Cieślik",
   "license": "UNLICENSED",
-  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67",
+  "packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc",
   "dependencies": {
-    "axios": "^1.12.2",
-    "cheerio": "1.1.2",
+    "axios": "^1.13.5",
+    "cheerio": "1.2.0",
     "csv-writer": "^1.6.0"
   },
   "devDependencies": {
-    "@jest/globals": "^30.1.2",
+    "@jest/globals": "^30.2.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.4.0",
-    "jest": "^30.1.3",
-    "nodemon": "^3.1.10",
-    "ts-jest": "^29.4.1",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "@types/node": "^25.2.3",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
