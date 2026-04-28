@@ -21,11 +21,7 @@ export class WebScraper {
       .get();
 
     const movies = titles
-      .map((title, index) => ({
-        title: title,
-        service: service.name,
-        rating: ratings[index],
-      }))
+      .map((title, index) => ({ title: title, service: service.name, rating: ratings[index] }))
       .slice(0, 10);
 
     console.log(`[LOG] Scraped ${movies.length} movies from ${service.name}.`);

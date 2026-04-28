@@ -2,10 +2,7 @@ import { jest, describe, beforeEach, afterEach, it, expect } from '@jest/globals
 import { WebScraper } from '../src/classes/WebScraper.js';
 import { Movie } from '../src/interfaces/Movie.js';
 
-jest.unstable_mockModule('csv-writer', () => ({
-  createObjectCsvWriter: jest.fn(),
-  setFailed: jest.fn(),
-}));
+jest.unstable_mockModule('csv-writer', () => ({ createObjectCsvWriter: jest.fn(), setFailed: jest.fn() }));
 const csvWriter = await import('csv-writer');
 
 describe('WebScraper', () => {
@@ -15,9 +12,7 @@ describe('WebScraper', () => {
   beforeEach(() => {
     webScraper = new WebScraper();
     csvWriteRecordsMock = jest.fn();
-    (csvWriter.createObjectCsvWriter as jest.Mock).mockReturnValue({
-      writeRecords: csvWriteRecordsMock,
-    });
+    (csvWriter.createObjectCsvWriter as jest.Mock).mockReturnValue({ writeRecords: csvWriteRecordsMock });
   });
   afterEach(async () => jest.resetAllMocks());
 
